@@ -1,0 +1,105 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+#map-container {
+    width: 50%; /* Set map container to half of the viewport width */
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#info-container {
+    width: 50%; /* Set info container to the other half of the viewport width */
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+#stats {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow-y: visible; /* Scrollbar if content overflows */
+    background-color: #f3f6f4
+}
+
+#bar-chart {
+    width: 100%;
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow-y: auto; /* Scrollbar if content overflows */
+    background-color: #f3f6f4;
+}
+
+@media (max-width: 768px) {
+    #content {
+        flex-direction: column;
+    }
+    #map-container, #info-container {
+        width: 100%; 
+    }
+    #map {
+        height: 50vh;
+    }
+    #stats, #bar-chart {
+        height: auto;
+    }
+}
+
+/* Additional styles for bar chart text */
+.text.category-label, .text.value-label {
+    fill: #333;
+    font-size: 14px; 
+    font-family: Arial, sans-serif; 
+}
+
+/* Hover effect for bars */
+rect:hover {
+    fill: #417690; 
+}
+
+h1 {
+    margin-left: 20px;
+    font-family: verdana;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-left: 20px;
+    font-family: verdana;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: center;
+}
+
+p {
+    margin-left: 20px;
+    font-family: verdana;
+    font-weight: 600;
+    font-size: 16px;
+}
